@@ -1,0 +1,25 @@
+{
+  "name": "staty",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "prisma": "prisma"
+  },
+  "dependencies": {
+    "next": "14.1.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "prisma": "5.14.0",
+    "@prisma/client": "5.14.0",
+    "apollo-server-micro": "3.12.0",
+    "graphql": "16.8.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.3",
+    "postcss": "8.4.38",
+    "autoprefixer": "10.4.19"
+  }
+}
