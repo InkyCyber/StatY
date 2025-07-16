@@ -6,14 +6,29 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// Generate the Prisma Client
-
 generator client {
   provider = "prisma-client-js"
 }
 
-model User {
-  id    Int     @id @default(autoincrement())
-  name  String
-  email String  @unique
+model Team {
+  id      Int      @id @default(autoincrement())
+  name    String   @unique
+  players Player[]
+}
+
+model Player {
+  id       Int     @id @default(autoincrement())
+  name     String
+  teamId   Int?
+  team     Team?    @relation(fields: [teamId], references: [id])
+  stats    Stats?
+}
+
+model Stats {
+  id       Int     @id @default(autoincrement())
+  goals    Int     @default(0)
+  assists  Int     @default(0)
+  games    Int     @default(0)
+  playerId Int     @unique
+  player   Player  @relation(fields: [playerId], references: [id])
 }
