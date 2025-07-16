@@ -16,7 +16,7 @@ database layer and **Apollo GraphQL** for the API layer.
    ```bash
    npx prisma generate
    npx prisma db push
-   node prisma/seed.ts
+   node prisma/seed.js
    ```
 
 3. Run the development server:
